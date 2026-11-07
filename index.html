@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earshot Kurulum & Claude Code Rehberi | Mehmet Buğra Kara</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #090d16; color: #f1f5f9; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    .glass { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glow-cyan { box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.3); }
+    .glow-purple { box-shadow: 0 0 40px -10px rgba(168, 85, 247, 0.3); }
+    .code-box { background: #0b1120; border: 1px solid #1e293b; }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-cyan-500 selection:text-black">
+
+  <!-- Glow Backgrounds -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-cyan-500/10 via-purple-500/5 to-transparent pointer-events-none -z-10 blur-3xl"></div>
+
+  <!-- Navbar -->
+  <header class="border-b border-slate-800/80 sticky top-0 bg-[#090d16]/90 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 font-bold text-white text-lg">
+          🎧
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Earshot Rehberi</span>
+          <span class="text-xs text-cyan-400 font-medium ml-2 px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800/60">Claude Code MCP</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="https://github.com/Leonxlnx/earshot" target="_blank" class="text-slate-400 hover:text-white transition flex items-center gap-1.5">
+          <span>Orijinal Earshot</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="https://github.com/mehmetbugrakara" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition border border-slate-700">
+          @mehmetbugrakara
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+
+    <!-- Hero Section -->
+    <section class="text-center space-y-6 pt-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        Yapay Zeka Video Kurgusu İçin Ses Yeteneği
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+        Ajanlara <span class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">Kulak Verin</span>, Efektleri Kodla Üretin.
+      </h1>
+
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        GitHub'da 3 binden fazla yıldız alan <strong>Earshot</strong> ile Claude Code gibi ajanlara duyma yeteneği kazandırın. Senkron kontrolü, ses ölçümü ve anında efekt sentezi artık tek komutla.
+      </p>
+
+      <!-- Key Metrics Badges -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4 text-left">
+        <div class="glass p-4 rounded-xl border border-slate-800">
+          <div class="text-cyan-400 font-bold text-2xl mb-1">👂 Duyma</div>
+          <p class="text-xs text-slate-400">CLAP & AST ile ses içeriğini ve kalitesini anlar</p>
+        </div>
+        <div class="glass p-4 rounded-xl border border-slate-800">
+          <div class="text-purple-400 font-bold text-2xl mb-1">⏱️ Senkron</div>
+          <p class="text-xs text-slate-400">Görüntü kesimi ile ses vuruşu milisaniyesini ölçer</p>
+        </div>
+        <div class="glass p-4 rounded-xl border border-slate-800">
+          <div class="text-emerald-400 font-bold text-2xl mb-1">📊 Desibel</div>
+          <p class="text-xs text-slate-400">LUFS, True Peak ve LRA standart analizi</p>
+        </div>
+        <div class="glass p-4 rounded-xl border border-slate-800">
+          <div class="text-amber-400 font-bold text-2xl mb-1">⚡ Kodla Ses</div>
+          <p class="text-xs text-slate-400">DSP ile whoosh, pop, tık seslerini sıfırdan üretir</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Steps Section -->
+    <section class="space-y-8">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+            <span>⚙️</span> Adım Adım Kurulum Rehberi
+          </h2>
+          <p class="text-sm text-slate-400 mt-1">İşletim sisteminize göre komutları kopyalayıp terminalinizde çalıştırın.</p>
+        </div>
+        <!-- OS Tabs -->
+        <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+          <button onclick="setOS('windows')" id="tab-windows" class="px-3.5 py-1.5 rounded-lg bg-cyan-600 text-white transition">Windows</button>
+          <button onclick="setOS('macos')" id="tab-macos" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">macOS</button>
+          <button onclick="setOS('linux')" id="tab-linux" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">Linux</button>
+        </div>
+      </div>
+
+      <!-- Step 1: FFmpeg -->
+      <div class="glass p-6 rounded-2xl space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-sm border border-cyan-500/30">1</span>
+            <h3 class="font-bold text-lg text-white">FFmpeg Kurulumu</h3>
+          </div>
+          <span class="text-xs text-amber-400 bg-amber-950/60 border border-amber-800/50 px-2.5 py-1 rounded-md">Zorunlu Gereksinim</span>
+        </div>
+        <p class="text-sm text-slate-400">Earshot'ın MP4, WAV, OGG dosyalarını okuyabilmesi için sisteminizde FFmpeg bulunmalıdır.</p>
+        
+        <div class="code-box p-4 rounded-xl flex items-center justify-between">
+          <code id="cmd-ffmpeg" class="text-cyan-300 text-sm">winget install Gyan.FFmpeg</code>
+          <button onclick="copyText('cmd-ffmpeg')" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs font-medium rounded-lg border border-slate-700 transition">Kopyala</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Earshot Repo & Venv -->
+      <div class="glass p-6 rounded-2xl space-y-4">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-sm border border-cyan-500/30">2</span>
+          <h3 class="font-bold text-lg text-white">Earshot'ı Klonlayın ve Sanal Ortam Kurun</h3>
+        </div>
+        <p class="text-sm text-slate-400">Paket çakışmalarını önlemek için bağımsız bir sanal ortama kurun:</p>
+        
+        <div class="code-box p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-500 uppercase font-mono tracking-wider">Terminal</span>
+            <button onclick="copyText('cmd-install')" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs font-medium rounded-lg border border-slate-700 transition">Tümünü Kopyala</button>
+          </div>
+          <pre id="cmd-install" class="text-slate-300 text-sm leading-relaxed overflow-x-auto"><code>git clone https://github.com/Leonxlnx/earshot.git
+cd earshot
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[mcp,llm]"
+earshot doctor</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 3: Claude Code MCP Setup -->
+      <div class="glass p-6 rounded-2xl space-y-4 glow-purple">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center text-sm border border-purple-500/30">3</span>
+            <h3 class="font-bold text-lg text-white">Claude Code'a MCP Olarak Bağlama</h3>
+          </div>
+          <span class="text-xs text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2.5 py-1 rounded-md">Önemli Adım</span>
+        </div>
+        <p class="text-sm text-slate-400">
+          Modellerin bellekte hazır beklemesi ve anında yanıt vermesi için Claude Code'a tek komutla MCP sunucusu olarak ekleyin:
+        </p>
+
+        <div class="code-box p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-500 font-mono tracking-wider">Claude Code CLI Komutu</span>
+            <button onclick="copyText('cmd-mcp')" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs font-medium rounded-lg border border-slate-700 transition">Kopyala</button>
+          </div>
+          <pre id="cmd-mcp" class="text-cyan-300 text-sm leading-relaxed overflow-x-auto"><code>claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- "C:/path/to/earshot/.venv/Scripts/python.exe" -m earshot mcp</code></pre>
+        </div>
+
+        <div class="p-3.5 bg-amber-950/30 border border-amber-900/50 rounded-xl text-xs text-amber-300 leading-relaxed">
+          ⚡ <strong>İpucu (Timeout Çözümü):</strong> İlk açılışta modeller belleğe alınırken Claude zaman aşımına uğramaması için oturumu <code>$env:MCP_TIMEOUT=60000; claude</code> şeklinde başlatın.
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Functions & Cheatsheet -->
+    <section class="space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+          <span>⚡</span> Videoda Bahsedilen Temel Komutlar
+        </h2>
+        <p class="text-sm text-slate-400 mt-1">İçerik videosunda vaat ettiğimiz kritik fonksiyonlar ve pratik kullanımları:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Feature 1 -->
+        <div class="glass p-5 rounded-2xl space-y-3">
+          <div class="flex items-center gap-2 text-cyan-400 font-bold">
+            <span>📊</span> Ses Seviyesi ve Standart Ölçümü
+          </div>
+          <p class="text-xs text-slate-400">LUFS, dBTP ve dinamik aralığı analiz eder, patlamaları ve kısık sesleri raporlar.</p>
+          <div class="code-box p-3 rounded-lg text-xs text-slate-300 font-mono">
+            earshot measure video_mix.wav
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass p-5 rounded-2xl space-y-3">
+          <div class="flex items-center gap-2 text-purple-400 font-bold">
+            <span>🎯</span> Akıllı Efekt Arama & Kırpma
+          </div>
+          <p class="text-xs text-slate-400">İstediğiniz ses tarifine göre klasördeki en iyi dosyayı ve içindeki en temiz saniyeleri bulur.</p>
+          <div class="code-box p-3 rounded-lg text-xs text-slate-300 font-mono">
+            earshot rank "crisp whoosh transition" ./sfx/ --top 3<br>
+            earshot find file.ogg "single clean click"
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass p-5 rounded-2xl space-y-3">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold">
+            <span>⏱️</span> Video-Ses Senkron Kontrolü
+          </div>
+          <p class="text-xs text-slate-400">Görüntü geçişleri ile ses efektlerinin vuruş milisaniyesini ölçüp spektrogram grafiği çıkarır.</p>
+          <div class="code-box p-3 rounded-lg text-xs text-slate-300 font-mono">
+            earshot timeline video.mp4<br>
+            earshot sheet video.mp4 -o sync_raporu.png
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass p-5 rounded-2xl space-y-3">
+          <div class="flex items-center gap-2 text-amber-400 font-bold">
+            <span>✨</span> Kodla Sıfırdan Ses Efekti Üretme
+          </div>
+          <p class="text-xs text-slate-400">DSP sentezleyicisi ile geçiş efektleri, pop, tık ve vuruşları anında WAV olarak üretir.</p>
+          <div class="code-box p-3 rounded-lg text-xs text-slate-300 font-mono">
+            earshot kit init --preset calm -o audio/kit.json<br>
+            earshot kit render audio/kit.json --out audio/kit
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Example Claude Code Prompts -->
+    <section class="glass p-6 sm:p-8 rounded-2xl space-y-6 border border-slate-800">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span>💬</span> Claude Code İle Nasıl Konuşulur? (Örnek İstekler)
+      </h2>
+      <div class="space-y-3">
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-slate-300">
+          <span class="text-cyan-400 font-semibold block mb-1">Örnek 1 (Senkron Denetimi):</span>
+          "Kurguladığın son render olan <code>final_reels.mp4</code> dosyasını earshot timeline ile dinle. Video kesimleriyle ses vuruşlarının senkronunu incele ve geciken vuruşları bana listele."
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-slate-300">
+          <span class="text-purple-400 font-semibold block mb-1">Örnek 2 (Ses Efekti Üretme):</span>
+          "Videonun 4. saniyesindeki istatistik tablosunun ekrana fırladığı an için earshot kit aracıyla tok bir 'ui_pop' efekti render et ve videonun ses kanalına monte et."
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-slate-300">
+          <span class="text-emerald-400 font-semibold block mb-1">Örnek 3 (Ses Seviyesi & Kalite):</span>
+          "Arka plan müziği ile seslendirme kaydımın LUFS ve dBTP değerlerini ölç. Konuşma sesinin müziğin altında ezilip ezilmediğini test et."
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800/80 py-8 text-center text-xs text-slate-500">
+    <p>Mehmet Buğra Kara &bull; Earshot Topluluk Rehberi &bull; 2026</p>
+  </footer>
+
+  <!-- OS Switcher & Copy Script -->
+  <script>
+    const osConfigs = {
+      windows: {
+        ffmpeg: 'winget install Gyan.FFmpeg',
+        install: `git clone https://github.com/Leonxlnx/earshot.git
+cd earshot
+python -m venv .venv
+.\\.venv\\Scripts\\Activate.ps1
+pip install -e ".[mcp,llm]"
+earshot doctor`,
+        mcp: `claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- "C:/path/to/earshot/.venv/Scripts/python.exe" -m earshot mcp`
+      },
+      macos: {
+        ffmpeg: 'brew install ffmpeg',
+        install: `git clone https://github.com/Leonxlnx/earshot.git
+cd earshot
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[mcp,llm]"
+earshot doctor`,
+        mcp: `claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- "/path/to/earshot/.venv/bin/python" -m earshot mcp`
+      },
+      linux: {
+        ffmpeg: 'sudo apt update && sudo apt install -y ffmpeg',
+        install: `git clone https://github.com/Leonxlnx/earshot.git
+cd earshot
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[mcp,llm]"
+earshot doctor`,
+        mcp: `claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- "/path/to/earshot/.venv/bin/python" -m earshot mcp`
+      }
+    };
+
+    function setOS(os) {
+      document.getElementById('cmd-ffmpeg').innerText = osConfigs[os].ffmpeg;
+      document.getElementById('cmd-install').innerText = osConfigs[os].install;
+      document.getElementById('cmd-mcp').innerText = osConfigs[os].mcp;
+
+      ['windows', 'macos', 'linux'].forEach(item => {
+        const btn = document.getElementById('tab-' + item);
+        if (item === os) {
+          btn.className = "px-3.5 py-1.5 rounded-lg bg-cyan-600 text-white transition";
+        } else {
+          btn.className = "px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition";
+        }
+      });
+    }
+
+    function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Panoya kopyalandı!');
+      });
+    }
+  </script>
+</body>
+</html>
