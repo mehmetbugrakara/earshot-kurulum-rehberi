@@ -4,6 +4,7 @@
 > Kodladığınız videodaki ses senkronunu kontrol edin, ses seviyelerini (LUFS/dBTP) profesyonelce ölçün ve geçiş efektleri için kodla anında yeni sesler üretin.
 
 [![GitHub stars](https://img.shields.io/badge/Original%20Repo-Leonxlnx%2Fearshot-blue?logo=github)](https://github.com/Leonxlnx/earshot)
+[![Web Rehber](https://img.shields.io/badge/Canlı%20Rehber-GitHub%20Pages-cyan?logo=safari)](https://mehmetbugrakara.github.io/earshot-kurulum-rehberi/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg?logo=python)](https://www.python.org/)
 [![Claude Code MCP](https://img.shields.io/badge/Claude%20Code-MCP%20Ready-purple.svg)](https://modelcontextprotocol.io/)
